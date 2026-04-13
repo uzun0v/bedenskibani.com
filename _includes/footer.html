@@ -5,8 +5,12 @@
     <!-- Hotel info -->
     <div class="text-center md:text-left">
       <div class="text-lg font-headline italic text-primary">
-        {{ site.data.content.hotel.name }}
+        {{ site.data.content.hotel.full_name }}
       </div>
+      <p class="text-xs text-stone-500 mt-1">{{ site.data.content.hotel.address }}</p>
+      {% if site.data.content.hotel.email %}
+      <a href="mailto:{{ site.data.content.hotel.email }}" class="text-xs text-stone-500 hover:text-primary transition-colors">{{ site.data.content.hotel.email }}</a>
+      {% endif %}
       <p class="font-body text-xs uppercase tracking-widest leading-loose text-stone-500 mt-4">
         &copy; {{ "now" | date: "%Y" }} {{ site.data.content.hotel.name }}. {{ site.data.content.footer.text }}
       </p>
@@ -21,11 +25,19 @@
       {% endfor %}
     </nav>
 
-    <!-- Phone -->
-    <a href="tel:{{ site.data.content.hotel.phone }}" class="inline-flex items-center gap-2 text-primary font-bold text-lg hover:opacity-80 transition-opacity">
-      <span class="material-symbols-outlined">call</span>
-      {{ site.data.content.hotel.phone_display }}
-    </a>
+    <!-- Phones -->
+    <div class="flex flex-col items-center md:items-end gap-2">
+      <a href="tel:{{ site.data.content.hotel.phone }}" class="inline-flex items-center gap-2 text-primary font-bold text-lg hover:opacity-80 transition-opacity">
+        <span class="material-symbols-outlined">call</span>
+        {{ site.data.content.hotel.phone_display }}
+      </a>
+      {% if site.data.content.hotel.phone2 %}
+      <a href="tel:{{ site.data.content.hotel.phone2 }}" class="inline-flex items-center gap-2 text-primary font-bold text-base hover:opacity-80 transition-opacity">
+        <span class="material-symbols-outlined text-base">call</span>
+        {{ site.data.content.hotel.phone2_display }}
+      </a>
+      {% endif %}
+    </div>
 
   </div>
 </footer>

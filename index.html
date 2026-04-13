@@ -25,6 +25,13 @@ layout: default
           <span class="material-symbols-outlined text-2xl">call</span>
           {{ site.data.content.hero.cta_primary }}
         </a>
+        <!-- Viber CTA -->
+        {% if site.data.content.hotel.viber %}
+        <a href="viber://chat?number={{ site.data.content.hotel.viber | uri_escape }}" class="inline-flex items-center justify-center gap-3 bg-[#7360f2] text-white px-8 md:px-10 py-5 rounded-lg font-body text-base md:text-lg uppercase tracking-wide hover:bg-[#5d4bd4] transition-all shadow-xl font-semibold">
+          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M11.4 0C9.473.028 5.333.344 3.02 2.467.953 4.4.323 7.3.1 12.96c-.213 5.667.667 9.147 3.093 10.48l.013 3.36s-.02.84.52 1.013c.653.213 1.04-.427 1.667-1.107.347-.373.82-.92 1.18-1.34 3.253.28 5.76-.347 6.04-.44.653-.213 4.347-.68 4.947-5.56.62-5.027-.293-8.2-2.007-9.633l-.007-.007c-.373-.427-2.667-2.6-7.46-2.707 0 0-.387-.027-.687-.02zm.147 1.88c.247-.007.447.013.447.013 3.953.087 5.96 1.833 6.273 2.2h.007c1.4 1.173 2.093 3.96 1.553 8.24-.48 3.933-3.4 4.24-3.947 4.42-.233.073-2.347.6-5.12.44 0 0-2.027 2.44-2.66 3.08-.1.1-.22.14-.3.12-.113-.027-.14-.147-.14-.327l.02-3.327c-1.96-1.08-2.667-3.8-2.487-8.48.187-4.64.673-7 1.487-7.833C7.86 2.66 11.3 1.887 11.547 1.88zm-.4 2.453c-.213 0-.213.327 0 .34.933.053 1.787.327 2.467.84.673.513 1.107 1.207 1.28 2.04.04.213.38.173.34-.04-.2-.96-.7-1.747-1.467-2.327-.76-.573-1.707-.873-2.62-.853zm.967 1.5c-.207-.007-.22.307-.013.327.64.113 1.187.6 1.393 1.267.047.2.36.16.327-.047-.147-.56-.453-1.013-.92-1.3a1.48 1.48 0 00-.787-.247zm-3.587.727c-.16-.02-.347.04-.527.193l-.007.007c-.36.313-.627.827-.567 1.273.02.16.067.32.147.467l.027.053c.333.72.74 1.407 1.213 2.053.613.867 1.347 1.653 2.18 2.327l.027.02.02.02.013.013h.007l.007.007c.873.647 1.653 1.147 2.32 1.487l.053.027c.147.073.307.127.467.147h.013c.46.047.953-.213 1.273-.567.16-.187.24-.387.227-.567-.013-.187-.107-.34-.3-.48l-.96-.72c-.373-.287-.753-.113-.92.007l-.36.313-.14.133-.073-.04a9.907 9.907 0 01-2.08-1.8 9.907 9.907 0 01-1.3-1.9l-.04-.073.047-.047.107-.107.28-.327c.153-.18.273-.553-.013-.92l-.747-.98c-.12-.16-.26-.247-.393-.267zm3.393.527c-.207-.007-.24.307-.033.34.373.06.573.34.62.687.013.2.34.187.327-.02a1.196 1.196 0 00-.914-.007z"/></svg>
+          Viber
+        </a>
+        {% endif %}
         <!-- Secondary CTA -->
         <a href="#pricing" class="inline-flex items-center justify-center border border-white/30 backdrop-blur-md text-white px-8 md:px-10 py-5 rounded-lg font-body text-base md:text-lg uppercase tracking-wide hover:bg-white/10 transition-all">
           {{ site.data.content.hero.cta_secondary }}
@@ -35,7 +42,7 @@ layout: default
 </section>
 
 <!-- ===================== FEATURES BENTO GRID ===================== -->
-<section class="py-16 md:py-24 bg-surface px-6 md:px-8">
+<section id="rooms" class="py-16 md:py-24 bg-surface px-6 md:px-8">
   <div class="max-w-screen-2xl mx-auto">
     <div class="grid grid-cols-1 md:grid-cols-12 gap-6 md:min-h-[500px]">
       {% for feature in site.data.content.features %}
@@ -143,37 +150,167 @@ layout: default
       <h2 class="font-headline text-3xl md:text-4xl mb-4">{{ site.data.content.pricing.heading }}</h2>
       <p class="font-body text-on-surface-variant max-w-2xl mx-auto text-lg">{{ site.data.content.pricing.subtitle }}</p>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
-      {% for item in site.data.content.pricing.items %}
-      <div class="bg-surface-container-lowest rounded-xl p-8 md:p-12 text-center border-2 border-primary/10 hover:border-primary/30 transition-colors">
-        <h3 class="font-headline text-2xl mb-6 text-on-surface">{{ item.name }}</h3>
-        <div class="mb-6">
-          <span class="font-headline text-5xl md:text-6xl font-bold text-primary">{{ item.price }}</span>
-          <span class="block text-on-surface-variant text-lg mt-2">{{ item.period }}</span>
+
+    <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 max-w-5xl mx-auto">
+
+      <!-- Пакет Здраве — wider card -->
+      <div class="lg:col-span-3 bg-surface-container-lowest rounded-xl p-8 md:p-10 border-2 border-primary/20">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="material-symbols-outlined text-primary text-2xl">health_and_safety</span>
+          <h3 class="font-headline text-2xl text-primary">{{ site.data.content.pricing.package.name }}</h3>
         </div>
-        <a href="tel:{{ site.data.content.hotel.phone }}" class="inline-flex items-center justify-center gap-2 w-full bg-gradient-to-br from-primary to-primary-container text-on-primary px-6 py-4 rounded-lg font-body text-base uppercase tracking-wide hover:opacity-90 transition-opacity font-semibold">
+        <p class="text-on-surface-variant text-sm mb-6 leading-relaxed">{{ site.data.content.pricing.package.note }}</p>
+
+        <!-- Pricing table -->
+        <div class="divide-y divide-stone-200">
+          {% for dur in site.data.content.pricing.package.durations %}
+          <div class="flex items-center justify-between py-3">
+            <span class="font-body text-on-surface font-medium">{{ dur.nights }}</span>
+            <div class="text-right">
+              <span class="font-headline text-xl font-bold text-primary">{{ dur.price_eur }}</span>
+              <span class="text-on-surface-variant text-sm ml-2">/ {{ dur.price_bgn }}</span>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+
+        <a href="tel:{{ site.data.content.hotel.phone }}" class="mt-8 inline-flex items-center justify-center gap-2 w-full bg-gradient-to-br from-primary to-primary-container text-on-primary px-6 py-4 rounded-lg font-body text-base uppercase tracking-wide hover:opacity-90 transition-opacity font-semibold">
           <span class="material-symbols-outlined">call</span>
           {{ site.data.content.contact.cta }}
         </a>
       </div>
-      {% endfor %}
+
+      <!-- Стандартен престой — narrower card -->
+      <div class="lg:col-span-2 bg-surface-container-lowest rounded-xl p-8 md:p-10 border-2 border-primary/10 flex flex-col">
+        <h3 class="font-headline text-2xl mb-4 text-on-surface">{{ site.data.content.pricing.standard.name }}</h3>
+        <div class="mb-4 text-center py-6">
+          <span class="font-headline text-5xl font-bold text-primary">{{ site.data.content.pricing.standard.price_eur }}</span>
+          <span class="block text-on-surface-variant text-base mt-1">{{ site.data.content.pricing.standard.price_bgn }} {{ site.data.content.pricing.standard.period }}</span>
+        </div>
+        <p class="text-on-surface-variant text-sm leading-relaxed mb-6">{{ site.data.content.pricing.standard.note }}</p>
+
+        <!-- Conditions -->
+        <ul class="text-xs text-on-surface-variant space-y-2 mt-auto mb-6">
+          {% for cond in site.data.content.pricing.conditions %}
+          <li class="flex items-start gap-2">
+            <span class="material-symbols-outlined text-secondary text-sm mt-0.5">check</span>
+            {{ cond }}
+          </li>
+          {% endfor %}
+        </ul>
+
+        <a href="tel:{{ site.data.content.hotel.phone }}" class="inline-flex items-center justify-center gap-2 w-full border-2 border-primary text-primary px-6 py-4 rounded-lg font-body text-base uppercase tracking-wide hover:bg-primary hover:text-on-primary transition-colors font-semibold">
+          <span class="material-symbols-outlined">call</span>
+          {{ site.data.content.contact.cta }}
+        </a>
+      </div>
+
     </div>
+
+    <!-- Bank details -->
+    {% if site.data.content.pricing.bank %}
+    <div class="max-w-3xl mx-auto mt-10 text-center">
+      <p class="text-xs text-on-surface-variant uppercase tracking-widest mb-2">{{ site.data.content.pricing.bank.label }}</p>
+      <p class="text-sm text-on-surface-variant">{{ site.data.content.pricing.bank.bank_name }} • IBAN: {{ site.data.content.pricing.bank.iban }} • BIC: {{ site.data.content.pricing.bank.bic }} • {{ site.data.content.pricing.bank.holder }}</p>
+    </div>
+    {% endif %}
   </div>
 </section>
 
 <!-- ===================== CLINICAL PATHWAY SECTION ===================== -->
 <section id="clinical" class="py-16 md:py-24 bg-white">
   <div class="max-w-screen-xl mx-auto px-6 md:px-8">
-    <div class="max-w-3xl mx-auto text-center">
+    <div class="max-w-3xl mx-auto text-center mb-12">
       <span class="text-secondary text-xs uppercase tracking-[0.3em] font-bold mb-4 block">{{ site.data.content.clinical.label }}</span>
       <h2 class="font-headline text-3xl md:text-4xl mb-8 text-primary">{{ site.data.content.clinical.heading }}</h2>
-      <p class="text-on-surface-variant text-lg md:text-xl leading-relaxed mb-10">
+      <p class="text-on-surface-variant text-lg md:text-xl leading-relaxed">
         {{ site.data.content.clinical.text }}
       </p>
+    </div>
+
+    <!-- Procedures grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto mb-10">
+      {% for proc in site.data.content.clinical.procedures %}
+      <div class="bg-surface-container-low rounded-lg p-6 text-center hover:shadow-md transition-shadow">
+        <span class="material-symbols-outlined text-3xl text-primary mb-3 block">{{ proc.icon }}</span>
+        <h3 class="font-headline text-base font-bold mb-2">{{ proc.name }}</h3>
+        <p class="text-on-surface-variant text-sm leading-relaxed">{{ proc.desc }}</p>
+      </div>
+      {% endfor %}
+    </div>
+
+    {% if site.data.content.clinical.pool_note %}
+    <p class="text-center text-xs text-on-surface-variant max-w-2xl mx-auto mb-10">⚠️ {{ site.data.content.clinical.pool_note }}</p>
+    {% endif %}
+
+    <div class="text-center">
       <a href="tel:{{ site.data.content.hotel.phone }}" class="inline-flex items-center justify-center gap-3 bg-gradient-to-br from-primary to-primary-container text-on-primary px-10 py-5 rounded-lg font-body text-lg uppercase tracking-wide hover:opacity-90 transition-all shadow-lg font-semibold">
         <span class="material-symbols-outlined text-2xl">call</span>
         {{ site.data.content.clinical.cta }}
       </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ATTRACTIONS SECTION ===================== -->
+<section class="py-16 md:py-24 bg-surface-container-low">
+  <div class="max-w-screen-xl mx-auto px-6 md:px-8">
+    <div class="text-center mb-12">
+      <h2 class="font-headline text-3xl md:text-4xl mb-4">{{ site.data.content.attractions.heading }}</h2>
+      <p class="font-body text-on-surface-variant max-w-2xl mx-auto text-lg">{{ site.data.content.attractions.subtitle }}</p>
+    </div>
+
+    <!-- Photo gallery -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-16">
+      {% for photo in site.data.content.attractions.gallery %}
+      <div class="group relative overflow-hidden rounded-xl aspect-[4/3]">
+        <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="{{ photo.image | relative_url }}" alt="{{ photo.alt }}" loading="lazy">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
+          <p class="text-white font-headline text-lg">{{ photo.caption }}</p>
+          <p class="text-white/60 text-xs mt-1">{{ photo.credit }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+      <!-- Nature -->
+      <div>
+        <h3 class="font-headline text-xl text-primary mb-4 flex items-center gap-2">
+          <span class="material-symbols-outlined text-secondary">park</span>
+          {{ site.data.content.attractions.nature.label }}
+        </h3>
+        <ul class="space-y-2 text-on-surface-variant text-sm">
+          {% for item in site.data.content.attractions.nature.items %}
+          <li class="flex items-start gap-2"><span class="text-secondary">•</span> {{ item }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      <!-- Culture -->
+      <div>
+        <h3 class="font-headline text-xl text-primary mb-4 flex items-center gap-2">
+          <span class="material-symbols-outlined text-secondary">museum</span>
+          {{ site.data.content.attractions.culture.label }}
+        </h3>
+        <ul class="space-y-2 text-on-surface-variant text-sm">
+          {% for item in site.data.content.attractions.culture.items %}
+          <li class="flex items-start gap-2"><span class="text-secondary">•</span> {{ item }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      <!-- Peaks -->
+      <div>
+        <h3 class="font-headline text-xl text-primary mb-4 flex items-center gap-2">
+          <span class="material-symbols-outlined text-secondary">landscape</span>
+          {{ site.data.content.attractions.peaks.label }}
+        </h3>
+        <ul class="space-y-2 text-on-surface-variant text-sm">
+          {% for item in site.data.content.attractions.peaks.items %}
+          <li class="flex items-start gap-2"><span class="text-secondary">•</span> {{ item }}</li>
+          {% endfor %}
+        </ul>
+      </div>
     </div>
   </div>
 </section>
@@ -201,26 +338,65 @@ layout: default
     <div class="max-w-3xl mx-auto text-center">
       <h2 class="font-headline text-3xl md:text-4xl mb-12 text-primary">{{ site.data.content.contact.heading }}</h2>
 
-      <!-- Phone - large and prominent -->
+      <!-- Phones - large and prominent -->
       <div class="mb-10">
         <p class="text-on-surface-variant text-sm uppercase tracking-widest mb-3">{{ site.data.content.contact.phone_label }}</p>
         <a href="tel:{{ site.data.content.hotel.phone }}" class="inline-flex items-center gap-3 text-primary font-headline text-4xl md:text-5xl font-bold hover:opacity-80 transition-opacity">
           <span class="material-symbols-outlined text-4xl md:text-5xl">call</span>
           {{ site.data.content.hotel.phone_display }}
         </a>
+        {% if site.data.content.hotel.phone2 %}
+        <br>
+        <a href="tel:{{ site.data.content.hotel.phone2 }}" class="inline-flex items-center gap-3 text-primary font-headline text-3xl md:text-4xl font-bold hover:opacity-80 transition-opacity mt-3">
+          <span class="material-symbols-outlined text-3xl md:text-4xl">call</span>
+          {{ site.data.content.hotel.phone2_display }}
+        </a>
+        {% endif %}
       </div>
+
+      <!-- Email -->
+      {% if site.data.content.hotel.email %}
+      <div class="mb-8">
+        <p class="text-on-surface-variant text-sm uppercase tracking-widest mb-3">{{ site.data.content.contact.email_label }}</p>
+        <a href="mailto:{{ site.data.content.hotel.email }}" class="inline-flex items-center gap-2 font-headline text-2xl text-primary hover:opacity-80 transition-opacity">
+          <span class="material-symbols-outlined text-2xl">mail</span>
+          {{ site.data.content.hotel.email }}
+        </a>
+      </div>
+      {% endif %}
 
       <!-- Address -->
-      <div class="mb-10">
+      <div class="mb-4">
         <p class="text-on-surface-variant text-sm uppercase tracking-widest mb-3">{{ site.data.content.contact.address_label }}</p>
         <p class="font-headline text-2xl text-on-surface">{{ site.data.content.hotel.address }}</p>
+        {% if site.data.content.hotel.location_note %}
+        <p class="text-on-surface-variant text-base mt-2">{{ site.data.content.hotel.location_note }}</p>
+        {% endif %}
       </div>
 
-      <!-- CTA button -->
-      <a href="tel:{{ site.data.content.hotel.phone }}" class="inline-flex items-center justify-center gap-3 bg-gradient-to-br from-primary to-primary-container text-on-primary px-10 py-5 rounded-lg font-body text-lg uppercase tracking-wide hover:opacity-90 transition-all shadow-lg font-semibold">
-        <span class="material-symbols-outlined text-2xl">call</span>
-        {{ site.data.content.contact.cta }}
-      </a>
+      <!-- Facebook -->
+      {% if site.data.content.hotel.facebook %}
+      <div class="mb-10">
+        <a href="{{ site.data.content.hotel.facebook }}" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-primary hover:opacity-80 transition-opacity text-lg font-semibold mt-4">
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          Facebook
+        </a>
+      </div>
+      {% endif %}
+
+      <!-- CTA buttons -->
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href="tel:{{ site.data.content.hotel.phone }}" class="inline-flex items-center justify-center gap-3 bg-gradient-to-br from-primary to-primary-container text-on-primary px-10 py-5 rounded-lg font-body text-lg uppercase tracking-wide hover:opacity-90 transition-all shadow-lg font-semibold">
+          <span class="material-symbols-outlined text-2xl">call</span>
+          {{ site.data.content.contact.cta }}
+        </a>
+        {% if site.data.content.hotel.viber %}
+        <a href="viber://chat?number={{ site.data.content.hotel.viber | uri_escape }}" class="inline-flex items-center justify-center gap-3 bg-[#7360f2] text-white px-10 py-5 rounded-lg font-body text-lg uppercase tracking-wide hover:bg-[#5d4bd4] transition-all shadow-lg font-semibold">
+          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M11.4 0C9.473.028 5.333.344 3.02 2.467.953 4.4.323 7.3.1 12.96c-.213 5.667.667 9.147 3.093 10.48l.013 3.36s-.02.84.52 1.013c.653.213 1.04-.427 1.667-1.107.347-.373.82-.92 1.18-1.34 3.253.28 5.76-.347 6.04-.44.653-.213 4.347-.68 4.947-5.56.62-5.027-.293-8.2-2.007-9.633l-.007-.007c-.373-.427-2.667-2.6-7.46-2.707 0 0-.387-.027-.687-.02zm.147 1.88c.247-.007.447.013.447.013 3.953.087 5.96 1.833 6.273 2.2h.007c1.4 1.173 2.093 3.96 1.553 8.24-.48 3.933-3.4 4.24-3.947 4.42-.233.073-2.347.6-5.12.44 0 0-2.027 2.44-2.66 3.08-.1.1-.22.14-.3.12-.113-.027-.14-.147-.14-.327l.02-3.327c-1.96-1.08-2.667-3.8-2.487-8.48.187-4.64.673-7 1.487-7.833C7.86 2.66 11.3 1.887 11.547 1.88zm-.4 2.453c-.213 0-.213.327 0 .34.933.053 1.787.327 2.467.84.673.513 1.107 1.207 1.28 2.04.04.213.38.173.34-.04-.2-.96-.7-1.747-1.467-2.327-.76-.573-1.707-.873-2.62-.853zm.967 1.5c-.207-.007-.22.307-.013.327.64.113 1.187.6 1.393 1.267.047.2.36.16.327-.047-.147-.56-.453-1.013-.92-1.3a1.48 1.48 0 00-.787-.247zm-3.587.727c-.16-.02-.347.04-.527.193l-.007.007c-.36.313-.627.827-.567 1.273.02.16.067.32.147.467l.027.053c.333.72.74 1.407 1.213 2.053.613.867 1.347 1.653 2.18 2.327l.027.02.02.02.013.013h.007l.007.007c.873.647 1.653 1.147 2.32 1.487l.053.027c.147.073.307.127.467.147h.013c.46.047.953-.213 1.273-.567.16-.187.24-.387.227-.567-.013-.187-.107-.34-.3-.48l-.96-.72c-.373-.287-.753-.113-.92.007l-.36.313-.14.133-.073-.04a9.907 9.907 0 01-2.08-1.8 9.907 9.907 0 01-1.3-1.9l-.04-.073.047-.047.107-.107.28-.327c.153-.18.273-.553-.013-.92l-.747-.98c-.12-.16-.26-.247-.393-.267zm3.393.527c-.207-.007-.24.307-.033.34.373.06.573.34.62.687.013.2.34.187.327-.02a1.196 1.196 0 00-.914-.007z"/></svg>
+          Viber
+        </a>
+        {% endif %}
+      </div>
     </div>
   </div>
 </section>
