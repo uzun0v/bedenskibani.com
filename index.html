@@ -6,7 +6,7 @@ layout: default
 <section id="home" class="relative min-h-[600px] md:min-h-[800px] flex items-center overflow-hidden">
   <!-- Background image -->
   <div class="absolute inset-0 z-0">
-    <img class="w-full h-full object-cover" src="{{ site.data.content.hero.image }}" alt="{{ site.data.content.hero.image_alt }}">
+    <img class="w-full h-full object-cover" src="{{ site.data.content.hero.image | relative_url }}" alt="{{ site.data.content.hero.image_alt }}">
     <div class="absolute inset-0 bg-gradient-to-r from-stone-900/60 to-transparent"></div>
   </div>
   <!-- Hero content -->
@@ -43,7 +43,7 @@ layout: default
       <!-- Main feature - Mineral Baths -->
       <div class="md:col-span-7 relative group overflow-hidden rounded-xl bg-surface-container-low p-8 md:p-12 flex flex-col justify-end min-h-[400px]">
         <div class="absolute inset-0 z-0">
-          <img class="w-full h-full object-cover opacity-60" src="{{ feature.image }}" alt="{{ feature.image_alt }}">
+          <img class="w-full h-full object-cover opacity-60" src="{{ feature.image | relative_url }}" alt="{{ feature.image_alt }}">
           <div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent"></div>
         </div>
         <div class="relative z-10 text-white">
@@ -63,7 +63,7 @@ layout: default
         </div>
         <div class="mt-6 flex justify-center">
           <div class="w-full h-48 md:h-64 overflow-hidden rounded-xl shadow-2xl">
-            <img class="w-full h-full object-cover" src="{{ feature.image }}" alt="{{ feature.image_alt }}">
+            <img class="w-full h-full object-cover" src="{{ feature.image | relative_url }}" alt="{{ feature.image_alt }}">
           </div>
         </div>
         <div class="mt-6">
@@ -86,7 +86,7 @@ layout: default
       <!-- Image -->
       <div class="lg:w-1/2 relative">
         <div class="relative z-10">
-          <img class="w-full h-[400px] md:h-[500px] object-cover rounded-xl shadow-2xl" src="{{ site.data.content.experience.image }}" alt="{{ site.data.content.experience.image_alt }}">
+          <img class="w-full h-[400px] md:h-[500px] object-cover rounded-xl shadow-2xl" src="{{ site.data.content.experience.image | relative_url }}" alt="{{ site.data.content.experience.image_alt }}">
         </div>
         <div class="absolute -bottom-10 -right-10 w-64 h-64 bg-primary rounded-full blur-[100px] opacity-10"></div>
       </div>
@@ -127,7 +127,7 @@ layout: default
     {% for service in site.data.content.services.items %}
     <div class="group cursor-pointer">
       <div class="aspect-[4/5] overflow-hidden rounded-lg mb-6 md:mb-8">
-        <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="{{ service.image }}" alt="{{ service.image_alt }}">
+        <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="{{ service.image | relative_url }}" alt="{{ service.image_alt }}">
       </div>
       <h3 class="font-headline text-2xl mt-2 mb-3">{{ service.title }}</h3>
       <p class="text-on-surface-variant text-base leading-relaxed">{{ service.description }}</p>

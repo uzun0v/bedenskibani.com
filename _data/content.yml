@@ -33,7 +33,7 @@ hero:
   subtitle: "Открийте Беденски Бани – място, където древната сила на минералната вода среща спокойствието на планината. Почивка, рехабилитация и лечение на достъпни цени."
   cta_primary: "Обадете се сега"
   cta_secondary: "Вижте стаите"
-  image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAPD3iyR_pD_TsBl3CQ-I1Nfso-fzir9SYy18L2FhVh-ZYYI08yig4AieiUceN-MYcOsFKI0aFGe3CjWyBm6h19R2cERi35YLzAa7PbSMzEvJW8OYPQvCywJy47o-iJVLv6jWbC3OBz2L3SlNbo4sJvoIwRK7S1dCEFRPOIT7KV73vRKNbwvnpZRqsB1tP1Rwe_aGEtxfULgsm7nKe6m0ix-C8HGOhp3leCDcreVyg_VYifVOHNcQMB-aPsZexIQFPJJDteyH36taw"
+  image: "/assets/images/hero-mountains.jpg"
   image_alt: "Планински пейзаж с утринна мъгла в Родопите"
 
 # --- Предимства (Бенто секция) ---
@@ -41,13 +41,13 @@ features:
   - title: "Минералните бани"
     description: "Басейни с гореща минерална вода, извираща директно от планината. Температура от 37°C до 42°C."
     link_text: "Разгледайте баните"
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCrbSxrX8GmLpH9SYVuvfjv4PWQjwkahnl2TDZc395zJkbVjwZ09-uie5qDBUIbgesuLKbL7OJhqPI-aY901jjCAiXMwBqTEMFB2F8cJW9b-SEzSXWU_pTFv3dKgBSjS9RK7MmlUwjwsFPA8vFc1CFPHiVPwHJ7sZy2wvU2L5rATRVc5mrAqmumK_d_NbPafs_4-I1PRiwGKS-6KQPRwLUQlY_ht7rar0FWbSX_K--jTyKnvjjbXbWmmNnIce_cZLsGhP-N4FYhEDQ"
+    image: "/assets/images/mineral-baths.jpg"
     image_alt: "Минерален басейн с пара"
   - title: "Уютни стаи"
     label: "Настаняване"
     description: "Чисти и удобни стаи с изглед към планината. Домашна атмосфера и пълно спокойствие."
     link_text: "Резервирайте стая"
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBBeLGinLtjy29NVpBVNxUeCoFRLPbVSBXaC8NbPUt3QdLqo9gdvHXe7upw7sH654S3ejLpt4-E6Qjfs-qQxSo3bi5sUK2JivfiBclms5-qXwREfQq_pX86Cm7UhY8IauG9Hx9vDNj8DoxMSoBkGJukavoeS7dAI0loaZxvErDEIkI5QZ-mH28sVL6SmT1UXpbAk0eOqp8HMRlNWek-5DXVtRCN0HTB3FscDfe7QYzZN4gEFJn1JZmW6eWzIXuUv4RytVrIDXW4QYQ"
+    image: "/assets/images/suites.jpg"
     image_alt: "Уютна хотелска стая с планински изглед"
 
 # --- Лечение и рехабилитация (Редакционна секция) ---
@@ -62,7 +62,7 @@ experience:
     - title: "Тиха среда"
       text: "Далеч от градския шум, сред чист планински въздух."
   link_text: "Вижте пакетите"
-  image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBulSTNvtFjrZkh4wRzbONLAJqZFeEPNqFXqUHjXV9frOsozEJ5KpH8po0FmsNQ2SR8DNYlxZr29r7Oi7sKnplpEMbHdqR0gJZlWPwLBXsp4c6Qm1BaP0YseqyzxkTj4o-R-_P_ZedmCX0zgE_Ud5IYwMDarEymf8TFTOVNrDrdD2jS-oNBwPSCtyGhFSexYN2h_yOXkSGuuEI3SQTpI8A2qfIF9LxFI1i35zjSVX186rkcheAONKkRzD_GWb4UDRyJMqkXwGshlOA"
+  image: "/assets/images/spa-oils.jpg"
   image_alt: "Етерични масла и спа камъни"
 
 # --- Услуги ---
@@ -72,15 +72,15 @@ services:
   items:
     - title: "Минерален басейн"
       description: "Гореща минерална вода с лечебни свойства. Открит и закрит басейн."
-      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBpnhMR0uRyk1eHnHRoxaE6nhCpdYFg2atY6OMVJVUAghvkjZOlZxzA7PkqIlUj-iGZpXWRCsfBYJBLH8ZW5155EOZo9jWKtgo5nC7uUTDHZjmBGs11hJ7hXXxCjjpa6WZ5CIHmZXGsvlrgd01Uv8-JnXCTmdHsj8kpvY2-0Sh2tNDzgq3a6m0hyWbM3UOuq3RiBweiQecVpLNUbmC2txqHjB34ryJsHUCbI2w7oPykZokJrXf_bgoPGZ69wTa4KNAf8VWgfdY_KPo"
+      image: "/assets/images/winter-room.jpg"
       image_alt: "Минерален басейн"
     - title: "Рехабилитация"
       description: "Програми за възстановяване след операции и заболявания на опорно-двигателния апарат."
-      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCyeONhbM0iiceYCAcxv_M3N-WIb5A97YldLND_Nzma9DjGSllDegPr__y8Wb2h3_6vZSFrAPTEIhMQ9vPbM4M9Gv5dbnllwq40PaxPuUGGF8mUUBOZYaA6CZHbTLl2m3j4sN0Bx5UvMkzAZftWAbVpSc_rudQsjM_ZazunVKiOnHajo9K8P8Ly7CQvAboT5ZMOVZ2pC36FoXSgBzibt7K51c4Jw2W60XSGBnYlFlrUYQRIKJGWjCg1pcMb_wSvP7F4A9JllYk-ZYU"
+      image: "/assets/images/dining.jpg"
       image_alt: "Рехабилитационни процедури"
     - title: "Хранене"
       description: "Домашно приготвена храна с продукти от региона. Диетично меню по заявка."
-      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuB3MotckE8iIKPtpefTrpYuumSOl9wVpEWYcvRyu0NyAB-EFzWyILivF20INwwp7a8IHGbFUl3AuA4WbnGUmTzsY1JTDnlNAQJz3TeT-YKinrnzW9i5OnotKNMlIky5EQWLSaok9l_Kc3qBjs9LWXBE33MdDf4dMAt12n9grkcvAr68IUAwxtTCIObXteLTNzENAn7p8_hZlraaJNkb67Q8AIsRaP3K7xNFcGm4vAw7VRPcgjYYhZpFHSG6NlpK1h-FFV_e6kljmH0"
+      image: "/assets/images/alpine-lake.jpg"
       image_alt: "Домашна храна"
 
 # --- Цени ---
