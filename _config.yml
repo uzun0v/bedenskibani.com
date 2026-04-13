@@ -1,0 +1,20 @@
+# Jekyll configuration for Bedenski Bani Hotel website
+# Compatible with GitHub Pages
+
+title: "Хотел Беденски Бани"
+description: "Минерални бани в Родопите – почивка, рехабилитация и лечение на достъпни цени. Хотел Беденски Бани, село Беден."
+lang: bg
+encoding: utf-8
+
+# Leave blank for GitHub Pages compatibility
+baseurl: ""
+url: ""
+
+# Build settings
+markdown: kramdown
+
+# Exclude unnecessary files from build
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock

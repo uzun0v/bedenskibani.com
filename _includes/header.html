@@ -1,0 +1,27 @@
+<!-- Site header with navigation and phone number -->
+<header class="site-header">
+  <div class="container header-inner">
+
+    <!-- Hotel name / logo -->
+    <div class="hotel-name">
+      <a href="#home">{{ site.data.content.hotel.name }}</a>
+    </div>
+
+    <!-- Navigation menu -->
+    <nav class="main-nav" aria-label="Main navigation">
+      <ul>
+        {% for item in site.data.content.nav %}
+        <li><a href="{{ item.link }}">{{ item.label }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+
+    <!-- Phone number - always visible -->
+    <div class="header-phone">
+      <a href="tel:{{ site.data.content.hotel.phone }}" class="phone-link">
+        &#9742; {{ site.data.content.hotel.phone_display }}
+      </a>
+    </div>
+
+  </div>
+</header>

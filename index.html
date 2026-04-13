@@ -1,0 +1,92 @@
+---
+layout: default
+---
+
+<!-- ===================== HERO SECTION ===================== -->
+<section id="home" class="hero-section">
+  <div class="container">
+    <h1>{{ site.data.content.hero.title }}</h1>
+    <p class="hero-subtitle">{{ site.data.content.hero.subtitle }}</p>
+    <a href="tel:{{ site.data.content.hotel.phone }}" class="btn btn-cta">
+      &#9742; {{ site.data.content.hero.cta }}
+    </a>
+  </div>
+</section>
+
+<!-- ===================== BENEFITS SECTION ===================== -->
+<section id="benefits" class="benefits-section">
+  <div class="container">
+    <h2>{{ site.data.content.benefits.heading }}</h2>
+    <ul class="benefits-list">
+      {% for benefit in site.data.content.benefits.items %}
+      <li>&#10003; {{ benefit }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+<!-- ===================== SERVICES SECTION ===================== -->
+<section id="services" class="services-section">
+  <div class="container">
+    <h2>{{ site.data.content.services.heading }}</h2>
+    <div class="services-grid">
+      {% for service in site.data.content.services.items %}
+      <div class="service-card">
+        <p>{{ service }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PRICING SECTION ===================== -->
+<section id="pricing" class="pricing-section">
+  <div class="container">
+    <h2>{{ site.data.content.pricing.heading }}</h2>
+    <div class="pricing-grid">
+      {% for item in site.data.content.pricing.items %}
+      <div class="pricing-card">
+        <h3>{{ item.name }}</h3>
+        <p class="price">{{ item.price }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CLINICAL PATHWAY SECTION ===================== -->
+<section id="clinical" class="clinical-section">
+  <div class="container">
+    <h2>{{ site.data.content.clinical.heading }}</h2>
+    <p class="clinical-text">{{ site.data.content.clinical.text }}</p>
+    <a href="tel:{{ site.data.content.hotel.phone }}" class="btn btn-cta">
+      &#9742; {{ site.data.content.clinical.cta }}
+    </a>
+  </div>
+</section>
+
+<!-- ===================== CONTACT SECTION ===================== -->
+<section id="contact" class="contact-section">
+  <div class="container">
+    <h2>{{ site.data.content.contact.heading }}</h2>
+
+    <!-- Phone - large and prominent -->
+    <div class="contact-phone">
+      <p class="contact-label">{{ site.data.content.contact.phone_label }}</p>
+      <a href="tel:{{ site.data.content.hotel.phone }}" class="phone-link phone-big">
+        &#9742; {{ site.data.content.hotel.phone_display }}
+      </a>
+    </div>
+
+    <!-- Address -->
+    <div class="contact-address">
+      <p class="contact-label">{{ site.data.content.contact.address_label }}</p>
+      <p>{{ site.data.content.hotel.address }}</p>
+    </div>
+
+    <!-- Map placeholder -->
+    <div class="map-placeholder">
+      <p>{{ site.data.content.contact.map_placeholder }}</p>
+    </div>
+  </div>
+</section>
