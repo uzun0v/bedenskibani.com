@@ -6,9 +6,9 @@ description: "Минерални бани в Родопите – почивка
 lang: bg
 encoding: utf-8
 
-# Leave blank for GitHub Pages compatibility
-baseurl: ""
-url: ""
+# For GitHub Pages project site (uzun0v.github.io/bedenskibani.com)
+baseurl: "/bedenskibani.com"
+url: "https://uzun0v.github.io"
 
 # Build settings
 markdown: kramdown
