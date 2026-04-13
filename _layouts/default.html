@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- SEO meta tags -->
-  <title>{{ site.data.content.hotel.name }}</title>
+  <title>{{ site.data.content.hotel.name }} – {{ site.data.content.hotel.tagline }}</title>
   <meta name="description" content="{{ site.description }}">
   <meta name="robots" content="index, follow">
 
@@ -14,10 +14,50 @@
   <meta property="og:description" content="{{ site.description }}">
   <meta property="og:type" content="website">
 
-  <!-- Stylesheet -->
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+  <!-- Google Fonts: Noto Serif (headlines) + Work Sans (body) -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Material Symbols for icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+
+  <!-- Tailwind config matching Stitch design system -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#062a05",
+            "primary-container": "#1d4118",
+            "on-primary": "#ffffff",
+            "on-primary-container": "#85ae79",
+            "secondary": "#934b19",
+            "secondary-container": "#ffa26a",
+            "on-secondary": "#ffffff",
+            "surface": "#fafaf5",
+            "surface-container-low": "#f4f4ef",
+            "surface-container-lowest": "#ffffff",
+            "surface-container": "#eeeee9",
+            "on-surface": "#1a1c19",
+            "on-surface-variant": "#42493f",
+            "outline-variant": "#c2c8bc",
+            "primary-fixed-dim": "#a7d29a",
+          },
+          fontFamily: {
+            "headline": ["Noto Serif", "Georgia", "serif"],
+            "body": ["Work Sans", "system-ui", "sans-serif"],
+          },
+        },
+      },
+    }
+  </script>
+
+  <!-- Custom styles -->
   <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
 </head>
-<body>
+<body class="bg-surface text-on-surface font-body selection:bg-secondary-container selection:text-on-surface">
 
   <!-- Header navigation -->
   {% include header.html %}
@@ -29,6 +69,9 @@
 
   <!-- Footer -->
   {% include footer.html %}
+
+</body>
+</html>
 
 </body>
 </html>
